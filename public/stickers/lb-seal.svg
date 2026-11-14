@@ -1,0 +1,17 @@
+<svg width="250" height="150" viewBox="0 0 250 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer white die-cut oval -->
+  <ellipse cx="125" cy="75" rx="120" ry="70" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <!-- Bright Red Oval Fill -->
+  <ellipse cx="125" cy="75" rx="112" ry="62" fill="#DC2626"/>
+  <!-- Inner White Border Oval -->
+  <ellipse cx="125" cy="75" rx="104" ry="54" fill="#FFFFFF"/>
+  <!-- Inner Thin Line -->
+  <ellipse cx="125" cy="75" rx="98" ry="48" fill="none" stroke="#DC2626" stroke-width="2"/>
+  
+  <!-- Monogram "LB" in Bold Dynamic Display Italics -->
+  <text x="125" y="86" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="52" fill="#DC2626" font-style="italic" letter-spacing="-2">LB</text>
+  
+  <!-- Top and Bottom Mini Text -->
+  <text x="125" y="44" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="9" fill="#000000" letter-spacing="3">LOUNÈS BENSEBA</text>
+  <text x="125" y="112" text-anchor="middle" font-family="monospace" font-weight="700" font-size="8.5" fill="#4B5563" letter-spacing="2">USTHB · SOFTWARE ENG</text>
+</svg>

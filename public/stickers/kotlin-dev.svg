@@ -1,0 +1,20 @@
+<svg width="220" height="210" viewBox="0 0 220 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Die-cut angular diamond/shield border -->
+  <path d="M110 8 L206 58 L180 190 L110 202 L40 190 L14 58 Z" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Dark Purple & Violet Kotlin-inspired gradient body -->
+  <path d="M110 18 L194 62 L172 180 L110 190 L48 180 L26 62 Z" fill="#7C3AED"/>
+
+  <!-- Inner border -->
+  <path d="M110 26 L182 66 L164 170 L110 178 L56 170 L38 66 Z" fill="none" stroke="#FDE047" stroke-width="2" stroke-dasharray="5 4"/>
+
+  <!-- Kotlin K glyph geometry -->
+  <g transform="translate(110, 85) scale(0.9)">
+    <path d="M-30 -30 L-30 30 L-10 30 L-10 -30 Z" fill="#FFFFFF"/>
+    <path d="M-10 0 L20 -30 L30 -30 L-2 2 Z" fill="#F43F5E"/>
+    <path d="M-10 0 L20 30 L30 30 L-2 -2 Z" fill="#F59E0B"/>
+  </g>
+
+  <!-- Text: KOTLIN & ANDROID -->
+  <text x="110" y="142" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="16" fill="#FFFFFF" letter-spacing="1">KOTLIN · NATIVE</text>
+  <text x="110" y="160" text-anchor="middle" font-family="monospace" font-weight="800" font-size="10" fill="#FDE047" letter-spacing="2">ANDROID EXPERT</text>
+</svg>

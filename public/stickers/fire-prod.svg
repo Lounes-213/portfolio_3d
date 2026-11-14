@@ -1,0 +1,17 @@
+<svg width="220" height="230" viewBox="0 0 220 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Die-Cut White Padding following flame shape -->
+  <path d="M110 8 C115 35, 145 65, 165 90 C185 115, 205 145, 195 180 C185 215, 150 226, 110 226 C70 226, 35 215, 25 180 C15 145, 35 115, 55 90 C75 65, 105 35, 110 8 Z" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Fire Red/Orange Body -->
+  <path d="M110 18 C114 42, 140 70, 158 94 C176 118, 194 144, 185 174 C176 204, 145 216, 110 216 C75 216, 44 204, 35 174 C26 144, 44 118, 62 94 C80 70, 106 42, 110 18 Z" fill="#EA580C"/>
+  <!-- Inner Yellow Core Flame -->
+  <path d="M110 70 C113 88, 130 110, 142 128 C154 146, 162 166, 154 186 C146 206, 126 210, 110 210 C94 210, 74 206, 66 186 C58 166, 66 146, 78 128 C90 110, 107 88, 110 70 Z" fill="#FACC15"/>
+  
+  <!-- Mascot Face or Bold Text -->
+  <circle cx="95" cy="148" r="5" fill="#000000"/>
+  <circle cx="125" cy="148" r="5" fill="#000000"/>
+  <path d="M98 165 Q110 178 122 165" stroke="#000000" stroke-width="3" stroke-linecap="round" fill="none"/>
+  
+  <!-- Banner on top of flame -->
+  <rect x="25" y="180" width="170" height="26" rx="13" fill="#000000" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="110" y="197" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="13" fill="#FFFFFF" letter-spacing="1">SHIPS TO PROD</text>
+</svg>

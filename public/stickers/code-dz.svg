@@ -1,0 +1,28 @@
+<svg width="240" height="150" viewBox="0 0 240 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Die-cut outer white border -->
+  <rect x="8" y="8" width="224" height="134" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="4"/>
+  <!-- Sharp Red/White Algerian Flag Inspired Accent -->
+  <rect x="15" y="15" width="210" height="120" rx="10" fill="#DC2626"/>
+
+  <!-- Inner Split: Left Green, Right White -->
+  <path d="M15 15 H120 V135 H15 Z" fill="#047857"/>
+  <path d="M120 15 H225 V135 H120 Z" fill="#FFFFFF"/>
+
+  <!-- Border line between green and white -->
+  <line x1="120" y1="15" x2="120" y2="135" stroke="#000000" stroke-width="2"/>
+
+  <!-- Central Crescent & Star Emblem -->
+  <g transform="translate(120, 75) scale(0.9)">
+    <!-- Crescent (Red) -->
+    <path d="M12 -22 C-1 -22, -12 -12, -12 0 C-12 12, -1 22, 12 22 C1.5 17, -5 9, -5 0 C-5 -9, 1.5 -17, 12 -22 Z" fill="#DC2626"/>
+    <!-- 5-Point Star (Red) -->
+    <path d="M5 0 L15 -7 L12 4 L21 -2 L12 8 Z" fill="#DC2626"/>
+  </g>
+
+  <!-- Top and Bottom Text Banners (Cubic Black Banners) -->
+  <rect x="25" y="24" width="190" height="20" rx="4" fill="#000000"/>
+  <text x="120" y="38" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="11" fill="#FFFFFF" letter-spacing="2">ALGERIAN DEVELOPER</text>
+
+  <rect x="35" y="106" width="170" height="20" rx="4" fill="#000000"/>
+  <text x="120" y="120" text-anchor="middle" font-family="monospace" font-weight="800" font-size="10" fill="#FACC15" letter-spacing="1.5">100% PROD READY</text>
+</svg>

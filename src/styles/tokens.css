@@ -1,0 +1,623 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   tokens.css — Minecraft 3D Gaming Design System Tokens.
+   ---------------------------------------------------------------------------
+   60% Obsidian/Mineral Neutral Canvas · 30% Voxel Structural Surfaces · 10% Emerald Accent
+   Every semantic color token exists in both Light (Overworld Daylight) and
+   Dark (Obsidian Arena) mappings, verified by `npm run audit:contrast`.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer tokens {
+  /* ── 1. Primitive ramps ────────────────────────────────────────────────── */
+
+  :root {
+    /* Slate / Obsidian neutrals (<5% cool tint) */
+    --ink-0: #ffffff;
+    --ink-25: #f6f8f5;
+    --ink-50: #edf1eb;
+    --ink-100: #dfe5dc;
+    --ink-200: #c8d1c4;
+    --ink-300: #a7b3a4;
+    --ink-350: #9aa69a;
+    --ink-400: #879488;
+    --ink-450: #728075;
+    --ink-500: #5c6860;
+    --ink-560: #4c5750;
+    --ink-600: #3d4741;
+    --ink-700: #2b332f;
+    --ink-800: #1b221f;
+    --ink-900: #111615;
+    --ink-950: #0b0e14;
+    --ink-1000: #06080c;
+
+    /* Emerald — signature Minecraft gaming accent */
+    --brand-50: #ecfdf5;
+    --brand-100: #d1fae5;
+    --brand-200: #a7f3d0;
+    --brand-300: #6ee7b7;
+    --brand-400: #34d399;
+    --brand-500: #10b981;
+    --brand-600: #057a55;
+    --brand-700: #046c4e;
+    --brand-800: #065f46;
+    --brand-900: #064e3b;
+    --brand-950: #022c22;
+
+    /* Jade — success */
+    --jade-50: #e7f7f0;
+    --jade-100: #c8efdd;
+    --jade-300: #86e7b8;
+    --jade-400: #4cd79a;
+    --jade-500: #1fb877;
+    --jade-600: #13885a;
+    --jade-650: #0f7a51;
+    --jade-700: #0e6b49;
+    --jade-900: #0a3a2a;
+
+    /* Gold / Enchanted Amber — warning & XP */
+    --amber-50: #fef6e4;
+    --amber-100: #fde8c0;
+    --amber-300: #fcd34d;
+    --amber-400: #fbbf24;
+    --amber-500: #d97706;
+    --amber-600: #a15403;
+    --amber-700: #7c3f02;
+    --amber-900: #2a1d0b;
+
+    /* Redstone — danger */
+    --crimson-50: #fef2f2;
+    --crimson-100: #fee2e2;
+    --crimson-300: #fca5a5;
+    --crimson-400: #f87171;
+    --crimson-500: #ef4444;
+    --crimson-600: #c81e1e;
+    --crimson-700: #9b1c1c;
+    --crimson-900: #2d1114;
+
+    /* Diamond Cyan — info & spatial */
+    --cyan-50: #ecfeff;
+    --cyan-100: #cffafe;
+    --cyan-200: #a5f3fc;
+    --cyan-300: #67e8f9;
+    --cyan-400: #22d3ee;
+    --cyan-600: #0e7490;
+    --cyan-700: #155e75;
+    --cyan-900: #0c2a36;
+
+    --black: #000000;
+    --white: #ffffff;
+  }
+
+  /* ── 2. Non-color tokens ───────────────────────────────────────────────── */
+
+  :root {
+    --font-display: var(--font-tech-display, "Pixelify Sans"), system-ui, sans-serif;
+    --font-sans: var(--font-tech-sans, "Plus Jakarta Sans"), system-ui, -apple-system, sans-serif;
+    --font-mono: var(--font-jetbrains, "Silkscreen"), ui-monospace, SFMono-Regular, monospace;
+    --font-arabic: var(--font-plex-arabic, "IBM Plex Sans Arabic"), "Segoe UI", Tahoma, sans-serif;
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-black: 700;
+
+    --step--2: clamp(0.72rem, 0.7rem + 0.08vw, 0.78rem);
+    --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.88rem);
+    --step-0: clamp(0.95rem, 0.93rem + 0.14vw, 1.03rem);
+    --step-1: clamp(1.12rem, 1.08rem + 0.22vw, 1.25rem);
+    --step-2: clamp(1.35rem, 1.28rem + 0.35vw, 1.56rem);
+    --step-3: clamp(1.65rem, 1.52rem + 0.55vw, 1.98rem);
+    --step-4: clamp(2.0rem, 1.82rem + 0.85vw, 2.45rem);
+    --step-5: clamp(2.35rem, 2.05rem + 1.4vw, 3.1rem);
+    --step-6: clamp(2.85rem, 2.35rem + 2.2vw, 3.8rem);
+    --step-7: clamp(3.25rem, 2.5rem + 3.6vw, 4.5rem);
+    --step-8: clamp(3.9rem, 2.5rem + 6vw, 6.2rem);
+    --step-9: clamp(4.6rem, 2.4rem + 9vw, 8.2rem);
+
+    --tracking-display: -0.02em;
+    --tracking-tight: -0.01em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.05em;
+    --tracking-eyebrow: 0.1em;
+
+    --leading-display: 1.04;
+    --leading-tight: 1.15;
+    --leading-snug: 1.35;
+    --leading-body: 1.62;
+    --leading-relaxed: 1.75;
+
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 1.75rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+    --space-gutter: clamp(1.25rem, 4vw, 2.5rem);
+    --space-section: clamp(4rem, 7vw, 6.5rem);
+    --space-section-sm: clamp(2.5rem, 5vw, 4.5rem);
+    --space-stack-xs: clamp(0.5rem, 0.4rem + 0.4vw, 0.75rem);
+    --space-stack-sm: clamp(0.75rem, 0.6rem + 0.6vw, 1.15rem);
+    --space-stack-md: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+    --space-stack-lg: clamp(1.75rem, 1.4rem + 1.8vw, 2.75rem);
+
+    /* Crisp voxel pixel radii */
+    --radius-2xs: 2px;
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 4px;
+    --radius-lg: 6px;
+    --radius-xl: 8px;
+    --radius-2xl: 10px;
+    --radius-pill: 999px;
+    --radius-control: 4px;
+    --radius-card: 4px;
+    --radius-panel: 6px;
+
+    --w-prose: 66ch;
+    --w-content: 74rem;
+    --w-wide: 86rem;
+    --w-ultra: 96rem;
+    --header-h: 4.25rem;
+    --mobile-nav-h: 4.25rem;
+
+    --target-min: 2.75rem;
+    --tap-target: 3rem;
+    --control-h-sm: 2.25rem;
+    --control-h-md: 2.75rem;
+    --control-h-lg: 3.25rem;
+
+    --z-below: -1;
+    --z-base: 0;
+    --z-raised: 10;
+    --z-sticky: 20;
+    --z-header: 30;
+    --z-drawer: 40;
+    --z-overlay: 50;
+    --z-modal: 60;
+    --z-palette: 70;
+    --z-assistant: 80;
+    --z-toast: 90;
+    --z-cursor: 100;
+
+    --focus-width: 2px;
+    --focus-offset: 2px;
+    --hairline: 2px;
+
+    --ease-linear: linear;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+    --ease-overshoot: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-swift: cubic-bezier(0.4, 0, 0.2, 1);
+    --dur-1: 90ms;
+    --dur-2: 160ms;
+    --dur-3: 240ms;
+    --dur-4: 380ms;
+    --dur-5: 600ms;
+    --dur-6: 900ms;
+    --dur-scene: 1200ms;
+    --stagger-1: 45ms;
+    --stagger-2: 80ms;
+    --stagger-3: 120ms;
+    --distance-xs: 4px;
+    --distance-sm: 8px;
+    --distance-md: 16px;
+    --distance-lg: 32px;
+    --blur-reveal: 8px;
+    --parallax-max: 0.18;
+    --scroll-progress-h: 3px;
+    --motion-scale: 1;
+  }
+
+  /* ── 3. Light theme — Overworld Daylight ───────────────────────────────── */
+
+  :root {
+    color-scheme: light;
+
+    --bg: var(--ink-25);
+    --bg-subtle: var(--ink-50);
+    --surface: var(--white);
+    --surface-raised: #ffffff;
+    --surface-sunken: var(--ink-50);
+    --surface-inverse: var(--ink-950);
+    --fg-on-inverse: #f3f6f4;
+
+    --fg: var(--ink-900);
+    --fg-muted: var(--ink-600);
+    --fg-subtle: var(--ink-560);
+    --fg-disabled: var(--ink-400);
+
+    --border: var(--ink-200);
+    --border-subtle: var(--ink-100);
+    --border-strong: var(--ink-300);
+    --border-interactive: var(--ink-500);
+    --border-inverse: rgb(255 255 255 / 0.18);
+
+    --accent-solid: var(--brand-600);
+    --accent-on-solid: var(--white);
+    --accent-text: var(--brand-700);
+    --accent-soft: var(--brand-50);
+    --accent-soft-text: var(--brand-800);
+    --accent-soft-border: var(--brand-200);
+    --accent-hover: var(--brand-700);
+    --accent-glow: color-mix(in srgb, var(--brand-500) 28%, transparent);
+    --accent-underline: color-mix(in srgb, var(--brand-600) 50%, transparent);
+
+    --success-solid: var(--jade-650);
+    --success-on-solid: var(--white);
+    --success-text: var(--jade-700);
+    --success-soft: var(--jade-50);
+    --success-soft-text: var(--jade-700);
+
+    --warning-solid: var(--amber-400);
+    --warning-on-solid: var(--ink-950);
+    --warning-text: var(--amber-700);
+    --warning-soft: var(--amber-50);
+    --warning-soft-text: var(--amber-700);
+
+    --danger-solid: var(--crimson-600);
+    --danger-on-solid: var(--white);
+    --danger-text: var(--crimson-700);
+    --danger-soft: var(--crimson-50);
+    --danger-soft-text: var(--crimson-700);
+
+    --info-solid: var(--cyan-600);
+    --info-on-solid: var(--white);
+    --info-text: var(--cyan-700);
+    --info-soft: var(--cyan-50);
+    --info-soft-text: var(--cyan-700);
+
+    --focus-ring: var(--brand-600);
+    --focus-ring-offset: var(--bg);
+    --selection-bg: var(--brand-100);
+    --selection-fg: var(--ink-900);
+
+    --scrim: rgb(11 14 20 / 0.58);
+    --glass-tint: rgb(255 255 255 / 0.88);
+    --glass-border: rgb(17 22 21 / 0.16);
+    --glass-ring: rgb(17 22 21 / 0.08);
+    --glass-blur: 10px;
+
+    --grid-size: 32px;
+    --grid-size-lg: 128px;
+    --grid-fade: 68%;
+    --grid-line: rgb(17 22 21 / 0.06);
+    --grid-line-strong: rgb(17 22 21 / 0.14);
+    --blueprint-stroke: var(--ink-300);
+    --blueprint-fill: var(--ink-50);
+    --noise-opacity: 0.03;
+
+    --diagram-node-bg: var(--white);
+    --diagram-node-fg: var(--ink-800);
+    --diagram-edge: var(--ink-450);
+    --diagram-active: var(--brand-600);
+    --diagram-active-soft: var(--brand-100);
+
+    --media-brightness: 1;
+    --media-saturation: 1;
+    --media-frame: var(--ink-200);
+
+    --shadow-1: 3px 3px 0px rgb(17 22 21 / 0.88);
+    --shadow-2: 4px 4px 0px rgb(17 22 21 / 0.92);
+    --shadow-3: 6px 6px 0px rgb(17 22 21 / 0.94);
+    --shadow-4: 8px 8px 0px rgb(17 22 21 / 0.96);
+    --shadow-inset-hairline: inset 2px 2px 0 rgb(255 255 255 / 0.7);
+    --shadow-focus: 0 0 0 var(--focus-width) var(--focus-ring);
+
+    --scrollbar-thumb: var(--ink-300);
+    --scrollbar-thumb-hover: var(--ink-500);
+    --scrollbar-track: transparent;
+  }
+
+  /* ── 4. Dark theme — Obsidian Arena ────────────────────────────────────── */
+
+  [data-theme="dark"] {
+    color-scheme: dark;
+
+    --bg: #0b0e14;
+    --bg-subtle: #080a0f;
+    --surface: #121722;
+    --surface-raised: #181f2d;
+    --surface-sunken: #090c12;
+    --surface-inverse: #f3f6f4;
+    --fg-on-inverse: #0b0e14;
+
+    --fg: #f1f5f9;
+    --fg-muted: #b4c0cf;
+    --fg-subtle: #8b9bb0;
+    --fg-disabled: #4b5563;
+
+    --border: rgb(255 255 255 / 0.14);
+    --border-subtle: rgb(255 255 255 / 0.08);
+    --border-strong: rgb(255 255 255 / 0.28);
+    --border-interactive: rgb(255 255 255 / 0.44);
+    --border-inverse: rgb(11 14 20 / 0.16);
+
+    --accent-solid: var(--brand-400);
+    --accent-on-solid: #051610;
+    --accent-text: var(--brand-300);
+    --accent-soft: #0c2b21;
+    --accent-soft-text: var(--brand-200);
+    --accent-soft-border: rgb(52 211 153 / 0.35);
+    --accent-hover: var(--brand-300);
+    --accent-glow: color-mix(in srgb, var(--brand-400) 30%, transparent);
+    --accent-underline: color-mix(in srgb, var(--brand-300) 55%, transparent);
+
+    --success-solid: var(--jade-400);
+    --success-on-solid: #051610;
+    --success-text: var(--jade-300);
+    --success-soft: var(--jade-900);
+    --success-soft-text: var(--jade-300);
+
+    --warning-solid: var(--amber-400);
+    --warning-on-solid: #181003;
+    --warning-text: var(--amber-300);
+    --warning-soft: var(--amber-900);
+    --warning-soft-text: var(--amber-300);
+
+    --danger-solid: var(--crimson-400);
+    --danger-on-solid: #1a0608;
+    --danger-text: var(--crimson-300);
+    --danger-soft: var(--crimson-900);
+    --danger-soft-text: var(--crimson-300);
+
+    --info-solid: var(--cyan-400);
+    --info-on-solid: #041820;
+    --info-text: var(--cyan-300);
+    --info-soft: var(--cyan-900);
+    --info-soft-text: var(--cyan-200);
+
+    --focus-ring: var(--brand-300);
+    --focus-ring-offset: var(--bg);
+    --selection-bg: #0f3b2e;
+    --selection-fg: #ecfdf5;
+
+    --scrim: rgb(5 7 12 / 0.72);
+    --glass-tint: rgb(18 23 34 / 0.9);
+    --glass-border: rgb(255 255 255 / 0.16);
+    --glass-ring: rgb(0 0 0 / 0.5);
+    --glass-blur: 12px;
+
+    --grid-size: 32px;
+    --grid-size-lg: 128px;
+    --grid-fade: 62%;
+    --grid-line: rgb(52 211 153 / 0.06);
+    --grid-line-strong: rgb(52 211 153 / 0.13);
+    --blueprint-stroke: rgb(255 255 255 / 0.16);
+    --blueprint-fill: rgb(255 255 255 / 0.04);
+    --noise-opacity: 0.04;
+
+    --diagram-node-bg: #141a26;
+    --diagram-node-fg: #eef3f8;
+    --diagram-edge: #7b8ca1;
+    --diagram-active: var(--brand-400);
+    --diagram-active-soft: rgb(52 211 153 / 0.2);
+
+    --media-brightness: 0.96;
+    --media-saturation: 1;
+    --media-frame: rgb(255 255 255 / 0.14);
+
+    --shadow-1: 3px 3px 0px rgb(0 0 0 / 0.85);
+    --shadow-2: 4px 4px 0px rgb(0 0 0 / 0.9);
+    --shadow-3: 6px 6px 0px rgb(0 0 0 / 0.95);
+    --shadow-4: 8px 8px 0px rgb(0 0 0 / 0.98);
+    --shadow-inset-hairline: inset 2px 2px 0 rgb(255 255 255 / 0.08);
+    --shadow-focus: 0 0 0 var(--focus-width) var(--focus-ring);
+
+    --scrollbar-thumb: rgb(255 255 255 / 0.2);
+    --scrollbar-thumb-hover: rgb(52 211 153 / 0.45);
+    --scrollbar-track: transparent;
+  }
+
+  /* ── 4b. Dark fallback for no-JS ───────────────────────────────────────── */
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+
+      --bg: #0b0e14;
+      --bg-subtle: #080a0f;
+      --surface: #121722;
+      --surface-raised: #181f2d;
+      --surface-sunken: #090c12;
+      --surface-inverse: #f3f6f4;
+      --fg-on-inverse: #0b0e14;
+
+      --fg: #f1f5f9;
+      --fg-muted: #b4c0cf;
+      --fg-subtle: #8b9bb0;
+      --fg-disabled: #4b5563;
+
+      --border: rgb(255 255 255 / 0.14);
+      --border-subtle: rgb(255 255 255 / 0.08);
+      --border-strong: rgb(255 255 255 / 0.28);
+      --border-interactive: rgb(255 255 255 / 0.44);
+      --border-inverse: rgb(11 14 20 / 0.16);
+
+      --accent-solid: var(--brand-400);
+      --accent-on-solid: #051610;
+      --accent-text: var(--brand-300);
+      --accent-soft: #0c2b21;
+      --accent-soft-text: var(--brand-200);
+      --accent-soft-border: rgb(52 211 153 / 0.35);
+      --accent-hover: var(--brand-300);
+      --accent-glow: color-mix(in srgb, var(--brand-400) 30%, transparent);
+      --accent-underline: color-mix(in srgb, var(--brand-300) 55%, transparent);
+
+      --success-solid: var(--jade-400);
+      --success-on-solid: #051610;
+      --success-text: var(--jade-300);
+      --success-soft: var(--jade-900);
+      --success-soft-text: var(--jade-300);
+
+      --warning-solid: var(--amber-400);
+      --warning-on-solid: #181003;
+      --warning-text: var(--amber-300);
+      --warning-soft: var(--amber-900);
+      --warning-soft-text: var(--amber-300);
+
+      --danger-solid: var(--crimson-400);
+      --danger-on-solid: #1a0608;
+      --danger-text: var(--crimson-300);
+      --danger-soft: var(--crimson-900);
+      --danger-soft-text: var(--crimson-300);
+
+      --info-solid: var(--cyan-400);
+      --info-on-solid: #041820;
+      --info-text: var(--cyan-300);
+      --info-soft: var(--cyan-900);
+      --info-soft-text: var(--cyan-200);
+
+      --focus-ring: var(--brand-300);
+      --focus-ring-offset: var(--bg);
+      --selection-bg: #0f3b2e;
+      --selection-fg: #ecfdf5;
+
+      --scrim: rgb(5 7 12 / 0.72);
+      --glass-tint: rgb(18 23 34 / 0.9);
+      --glass-border: rgb(255 255 255 / 0.16);
+      --glass-ring: rgb(0 0 0 / 0.5);
+      --glass-blur: 12px;
+
+      --grid-size: 32px;
+      --grid-size-lg: 128px;
+      --grid-fade: 62%;
+      --grid-line: rgb(52 211 153 / 0.06);
+      --grid-line-strong: rgb(52 211 153 / 0.13);
+      --blueprint-stroke: rgb(255 255 255 / 0.16);
+      --blueprint-fill: rgb(255 255 255 / 0.04);
+      --noise-opacity: 0.04;
+
+      --diagram-node-bg: #141a26;
+      --diagram-node-fg: #eef3f8;
+      --diagram-edge: #7b8ca1;
+      --diagram-active: var(--brand-400);
+      --diagram-active-soft: rgb(52 211 153 / 0.2);
+
+      --media-brightness: 0.96;
+      --media-saturation: 1;
+      --media-frame: rgb(255 255 255 / 0.14);
+
+      --shadow-1: 3px 3px 0px rgb(0 0 0 / 0.85);
+      --shadow-2: 4px 4px 0px rgb(0 0 0 / 0.9);
+      --shadow-3: 6px 6px 0px rgb(0 0 0 / 0.95);
+      --shadow-4: 8px 8px 0px rgb(0 0 0 / 0.98);
+      --shadow-inset-hairline: inset 2px 2px 0 rgb(255 255 255 / 0.08);
+      --shadow-focus: 0 0 0 var(--focus-width) var(--focus-ring);
+
+      --scrollbar-thumb: rgb(255 255 255 / 0.2);
+      --scrollbar-thumb-hover: rgb(52 211 153 / 0.45);
+      --scrollbar-track: transparent;
+    }
+  }
+
+  /* ── 5. Direction & script adaptivity ──────────────────────────────────── */
+
+  [dir="ltr"] {
+    --dir-sign: 1;
+  }
+
+  [dir="rtl"] {
+    --dir-sign: -1;
+  }
+
+  :lang(ar) {
+    --font-display: var(--font-arabic);
+    --font-sans: var(--font-arabic);
+    --tracking-display: 0em;
+    --tracking-tight: 0em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.02em;
+    --tracking-eyebrow: 0.06em;
+    --leading-display: 1.28;
+    --leading-tight: 1.42;
+    --leading-snug: 1.6;
+    --leading-body: 1.9;
+    --leading-relaxed: 2;
+    --font-code: var(--font-mono);
+  }
+
+  :root {
+    --font-code: var(--font-mono);
+    --numeric-tabular: "tnum" 1, "lnum" 1;
+    --numeric-proportional: "pnum" 1, "lnum" 1;
+    --numeric-oldstyle: "onum" 1;
+  }
+
+  /* ── 6. Reduced motion & degraded capability ───────────────────────────── */
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --dur-1: 1ms;
+      --dur-2: 1ms;
+      --dur-3: 1ms;
+      --dur-4: 1ms;
+      --dur-5: 1ms;
+      --dur-6: 1ms;
+      --dur-scene: 1ms;
+      --stagger-1: 0ms;
+      --stagger-2: 0ms;
+      --stagger-3: 0ms;
+      --distance-xs: 0px;
+      --distance-sm: 0px;
+      --distance-md: 0px;
+      --distance-lg: 0px;
+      --blur-reveal: 0px;
+      --parallax-max: 0;
+      --motion-scale: 0;
+      --ease-overshoot: var(--ease-standard);
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 1ms !important;
+      transition-delay: 0ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    :root {
+      --glass-tint: var(--surface);
+      --glass-blur: 0px;
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    :root {
+      --border: var(--ink-500);
+      --border-strong: var(--ink-700);
+      --border-interactive: var(--ink-700);
+      --fg-subtle: var(--ink-600);
+      --grid-line: rgb(17 22 21 / 0.2);
+      --grid-line-strong: rgb(17 22 21 / 0.34);
+    }
+
+    [data-theme="dark"] {
+      --border: rgb(255 255 255 / 0.35);
+      --border-strong: rgb(255 255 255 / 0.5);
+      --border-interactive: rgb(255 255 255 / 0.6);
+      --fg-subtle: var(--ink-350);
+      --grid-line: rgb(52 211 153 / 0.2);
+      --grid-line-strong: rgb(52 211 153 / 0.34);
+    }
+  }
+}

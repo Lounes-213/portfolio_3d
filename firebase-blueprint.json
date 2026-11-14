@@ -1,0 +1,140 @@
+{
+  "entities": {
+    "WorldPlayer": {
+      "title": "WorldPlayer",
+      "description": "Real-time state of an authenticated player exploring the 3D world.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID of the player."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32,
+          "description": "Display name shown above the 3D character."
+        },
+        "color": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 16,
+          "description": "Hex color of the player's jacket."
+        },
+        "x": {
+          "type": "number",
+          "description": "World X coordinate."
+        },
+        "y": {
+          "type": "number",
+          "description": "World Y coordinate."
+        },
+        "z": {
+          "type": "number",
+          "description": "World Z coordinate."
+        },
+        "yaw": {
+          "type": "number",
+          "description": "Character facing rotation angle in radians."
+        },
+        "zone": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 24,
+          "description": "Current district zone ID."
+        },
+        "isMoving": {
+          "type": "boolean",
+          "description": "Whether the player is currently walking."
+        },
+        "isPublic": {
+          "type": "boolean",
+          "description": "Always true for public world presence."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the last position update."
+        }
+      },
+      "required": [
+        "uid",
+        "name",
+        "color",
+        "x",
+        "y",
+        "z",
+        "yaw",
+        "zone",
+        "isMoving",
+        "isPublic",
+        "updatedAt"
+      ]
+    },
+    "WorldBlock": {
+      "title": "WorldBlock",
+      "description": "A voxel block placed in the shared 3D world.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID of the builder."
+        },
+        "x": {
+          "type": "number",
+          "description": "Integer block X coordinate."
+        },
+        "y": {
+          "type": "number",
+          "description": "Integer block Y coordinate."
+        },
+        "z": {
+          "type": "number",
+          "description": "Integer block Z coordinate."
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 24,
+          "description": "Block texture type identifier."
+        },
+        "isPublic": {
+          "type": "boolean",
+          "description": "Always true for public world blocks."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the block was placed."
+        }
+      },
+      "required": [
+        "ownerId",
+        "x",
+        "y",
+        "z",
+        "type",
+        "isPublic",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/world_players/{playerId}": {
+      "schema": {
+        "$ref": "#/entities/WorldPlayer"
+      },
+      "description": "Live connected players in the 3D world."
+    },
+    "/world_blocks/{blockId}": {
+      "schema": {
+        "$ref": "#/entities/WorldBlock"
+      },
+      "description": "Shared voxel blocks placed by players in the 3D world."
+    }
+  }
+}

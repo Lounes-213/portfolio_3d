@@ -1,0 +1,18 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Organic 16-point scalloped starburst die-cut outer border -->
+  <path d="M110 5 L126 22 L149 14 L158 36 L181 36 L183 60 L204 69 L198 92 L215 110 L198 128 L204 151 L183 160 L181 184 L158 184 L149 206 L126 198 L110 215 L94 198 L71 206 L62 184 L39 184 L37 160 L16 151 L22 128 L5 110 L22 92 L16 69 L37 60 L39 36 L62 36 L71 14 L94 22 Z" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Vibrant Yellow-Gold Starburst Body -->
+  <path d="M110 14 L124 29 L144 22 L152 42 L172 42 L174 62 L192 70 L187 90 L202 105 L187 120 L192 140 L174 148 L172 168 L152 168 L144 188 L124 181 L110 196 L96 181 L76 188 L68 168 L48 168 L46 148 L28 140 L33 120 L18 105 L33 90 L28 70 L46 62 L48 42 L68 42 L76 22 L96 29 Z" fill="#FACC15"/>
+
+  <!-- Inner Black Circular Inset -->
+  <circle cx="110" cy="105" r="54" fill="#000000" stroke="#FFFFFF" stroke-width="2.5"/>
+
+  <!-- Top Text on Inset -->
+  <text x="110" y="80" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="11" fill="#FACC15" letter-spacing="1.5">FULL-STACK</text>
+
+  <!-- Big Center Ampersand / Keyword -->
+  <text x="110" y="112" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="30" fill="#FFFFFF">&amp; MOBILE</text>
+
+  <!-- Bottom Tag -->
+  <text x="110" y="132" text-anchor="middle" font-family="monospace" font-weight="800" font-size="9" fill="#38BDF8" letter-spacing="2">ZERO SLOP</text>
+</svg>

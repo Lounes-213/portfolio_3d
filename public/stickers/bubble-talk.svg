@@ -1,0 +1,13 @@
+<svg width="240" height="170" viewBox="0 0 240 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Die-cut talk bubble shape with pointer beak -->
+  <path d="M45 10 C20 10, 8 26, 8 50 C8 85, 24 105, 55 105 L75 105 L60 145 L108 105 L195 105 C222 105, 232 88, 232 50 C232 24, 218 10, 195 10 Z" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Electric Royal Blue Fill -->
+  <path d="M47 17 C25 17, 15 31, 15 52 C15 82, 29 98, 57 98 L80 98 L69 130 L106 98 L193 98 C216 98, 225 84, 225 52 C225 30, 212 17, 193 17 Z" fill="#2563EB"/>
+
+  <!-- Inner Dotted Line -->
+  <path d="M50 25 C32 25, 24 36, 24 52 C24 76, 35 90, 60 90 L88 90 L80 114 L108 90 L188 90 C208 90, 216 78, 216 52 C216 36, 204 25, 188 25 Z" fill="none" stroke="#FEF08A" stroke-width="2" stroke-dasharray="5 4" opacity="0.8"/>
+
+  <!-- Bubble Bold Message -->
+  <text x="120" y="52" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="24" fill="#FFFFFF" letter-spacing="1">CLEAN CODE</text>
+  <text x="120" y="74" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="16" fill="#FEF08A" letter-spacing="3">100% HANDMADE</text>
+</svg>

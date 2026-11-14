@@ -1,0 +1,22 @@
+<svg width="280" height="130" viewBox="0 0 280 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Die-cut border angled/speed-slanted -->
+  <path d="M35 15 L260 15 C272 15, 278 24, 274 36 L248 110 C245 120, 236 126, 224 126 L15 126 C4 126, -2 116, 2 105 L26 28 C28 19, 32 15, 35 15 Z" fill="#FFFFFF" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Vibrant Yellow-Orange Speed Body -->
+  <path d="M40 22 L252 22 C260 22, 265 29, 262 38 L240 102 C238 110, 230 116, 220 116 L24 116 C16 116, 12 109, 15 101 L34 32 C36 25, 39 22, 40 22 Z" fill="#F59E0B"/>
+  
+  <!-- Speed Lines Background -->
+  <line x1="38" y1="40" x2="90" y2="40" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <line x1="28" y1="56" x2="70" y2="56" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+  <line x1="18" y1="72" x2="55" y2="72" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <line x1="26" y1="88" x2="75" y2="88" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+  
+  <!-- Lightning Bolt Icon -->
+  <path d="M102 26 L76 72 L98 72 L86 112 L124 58 L100 58 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5" stroke-linejoin="round"/>
+  
+  <!-- Speed text: 60 FPS -->
+  <text x="180" y="66" text-anchor="middle" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="40" fill="#000000" font-style="italic">60 FPS</text>
+  
+  <!-- Subtitle -->
+  <rect x="125" y="80" width="112" height="22" rx="11" fill="#000000"/>
+  <text x="181" y="95" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="10" fill="#FDE047" letter-spacing="2">ULTRA SMOOTH</text>
+</svg>

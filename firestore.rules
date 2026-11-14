@@ -1,0 +1,74 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global default-deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null && request.auth.token.email_verified == true;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidWorldPlayer(data) {
+      return data.keys().hasAll(['uid', 'name', 'color', 'x', 'y', 'z', 'yaw', 'zone', 'isMoving', 'isPublic', 'updatedAt'])
+        && data.keys().hasOnly(['uid', 'name', 'color', 'x', 'y', 'z', 'yaw', 'zone', 'isMoving', 'isPublic', 'updatedAt'])
+        && data.uid is string && data.uid.size() >= 1 && data.uid.size() <= 128 && data.uid.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.uid == request.auth.uid
+        && data.name is string && data.name.size() >= 1 && data.name.size() <= 32
+        && data.color is string && data.color.size() >= 4 && data.color.size() <= 16
+        && data.x is number && data.x >= -100 && data.x <= 100
+        && data.y is number && data.y >= -5 && data.y <= 50
+        && data.z is number && data.z >= -100 && data.z <= 100
+        && data.yaw is number && data.yaw >= -10 && data.yaw <= 10
+        && data.zone is string && data.zone.size() >= 1 && data.zone.size() <= 24
+        && data.isMoving is bool
+        && data.isPublic is bool && data.isPublic == true
+        && data.updatedAt == request.time;
+    }
+
+    function isValidWorldBlock(data) {
+      return data.keys().hasAll(['ownerId', 'x', 'y', 'z', 'type', 'isPublic', 'createdAt'])
+        && data.keys().hasOnly(['ownerId', 'x', 'y', 'z', 'type', 'isPublic', 'createdAt'])
+        && data.ownerId is string && data.ownerId.size() >= 1 && data.ownerId.size() <= 128 && data.ownerId.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.ownerId == request.auth.uid
+        && data.x is number && data.x >= -60 && data.x <= 60
+        && data.y is number && data.y >= 1 && data.y <= 30
+        && data.z is number && data.z >= -60 && data.z <= 60
+        && data.type is string && data.type.size() >= 1 && data.type.size() <= 24
+        && data.isPublic is bool && data.isPublic == true
+        && data.createdAt == request.time;
+    }
+
+    match /world_players/{playerId} {
+      allow get: if isValidId(playerId) && existing().isPublic == true;
+      allow list: if existing().isPublic == true;
+      allow create: if isSignedIn() && isValidId(playerId) && playerId == request.auth.uid && isValidWorldPlayer(incoming());
+      allow update: if isSignedIn() && isValidId(playerId) && playerId == request.auth.uid && isValidWorldPlayer(incoming())
+        && incoming().uid == existing().uid
+        && incoming().diff(existing()).affectedKeys().hasOnly(['name', 'color', 'x', 'y', 'z', 'yaw', 'zone', 'isMoving', 'updatedAt']);
+      allow delete: if isSignedIn() && isValidId(playerId) && playerId == request.auth.uid && existing().uid == request.auth.uid;
+    }
+
+    match /world_blocks/{blockId} {
+      allow get: if isValidId(blockId) && existing().isPublic == true;
+      allow list: if existing().isPublic == true;
+      allow create: if isSignedIn() && isValidId(blockId) && isValidWorldBlock(incoming());
+      allow update: if false;
+      allow delete: if isSignedIn() && isValidId(blockId) && existing().ownerId == request.auth.uid;
+    }
+  }
+}
